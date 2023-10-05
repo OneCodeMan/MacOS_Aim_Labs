@@ -24,28 +24,21 @@ struct MenuView: View {
             
             // Button group here
             HStack {
-                Button {
+                MenuSelectButton(title: "HEADSHOT CITY") {
                     self.selectedGameMode = .headshotCity
-                } label: {
-                    Text("HEADSHOT CITY")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGameMode == .headshotCity))
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .headshotCity))
                 
-                Button {
+                
+                MenuSelectButton(title: "SINGLE FLUCTUATING TARGET") {
                     self.selectedGameMode = .singleFluctuatingTarget
-                    Sounds.playSounds(soundfile: Constants.MenuSounds.genericMenuItemSelectString)
-                } label: {
-                    Text("SINGLE FLUCTUATING")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGameMode == .singleFluctuatingTarget))
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .singleFluctuatingTarget))
                 
-                Button {
+                MenuSelectButton(title: "MULTIPLE TARGETS") {
                     self.selectedGameMode = .multipleTargets
-                } label: {
-                    Text("MULTIPLE TARGETS")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGameMode == .multipleTargets))
-                
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .multipleTargets))
             }
             .padding()
             
@@ -53,37 +46,28 @@ struct MenuView: View {
                 .font(Font.custom("ARCADE_I.tff", size: 50))
             
             HStack {
-                Button {
+                
+                MenuSelectButton(title: "#TEAMGLOCK") {
                     self.selectedGun = .teamGlock
-                } label: {
-                    Text("#TEAMGLOCK")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGun == .teamGlock))
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGun == .teamGlock))
                 
-                Button {
+                MenuSelectButton(title: "DEAGLE DIVA") {
                     self.selectedGun = .deagleDiva
-                } label: {
-                    Text("DEAGLE DIVA")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGun == .deagleDiva))
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGun == .deagleDiva))
                 
-                Button {
+                MenuSelectButton(title: "M1 SHOOTER") {
                     self.selectedGun = .m1Shooter
-                } label: {
-                    Text("M1 SHOOTER")
                 }
-                .buttonStyle(OptionButtonStyle(isSelected: self.selectedGun == .m1Shooter))
-                
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGun == .m1Shooter))
             }
             .padding()
             
-            Button {
+            MenuActionButton(title: "LET'S PLAY!!") {
                 gameInProgress.toggle()
                 musicPlaying.toggle()
-            } label: {
-                Text("LET'S PLAY!!")
             }
-            .buttonStyle(.borderedProminent)
         }
     }
 }

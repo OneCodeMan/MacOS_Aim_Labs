@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OptionButtonStyle: ButtonStyle {
+struct MenuSelectButtonStyle: ButtonStyle {
     var isSelected: Bool
 
     func makeBody(configuration: Configuration) -> some View {

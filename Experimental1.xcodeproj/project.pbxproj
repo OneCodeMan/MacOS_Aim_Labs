@@ -33,11 +33,14 @@
 		162ED6752ACF189A008E0622 /* ARCADE_R.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6722ACF188D008E0622 /* ARCADE_R.TTF */; };
 		162ED6772ACF19F0008E0622 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6762ACF19F0008E0622 /* Info.plist */; };
 		162ED67A2ACF1C6E008E0622 /* GameSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */; };
-		162ED67C2ACF1DCE008E0622 /* OptionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */; };
+		162ED67C2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67B2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift */; };
 		162ED67E2ACF1FF6008E0622 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67D2ACF1FF6008E0622 /* MenuView.swift */; };
 		162ED6832ACF23A9008E0622 /* death2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6812ACF2334008E0622 /* death2.mp3 */; };
 		162ED6862ACF23CA008E0622 /* rings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6852ACF23CA008E0622 /* rings.mp3 */; };
 		162ED68D2ACF24F3008E0622 /* select1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED68C2ACF24F3008E0622 /* select1.mp3 */; };
+		162ED68F2ACF2650008E0622 /* MenuSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED68E2ACF2650008E0622 /* MenuSelectButton.swift */; };
+		162ED6912ACF2849008E0622 /* MenuActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6902ACF2849008E0622 /* MenuActionButton.swift */; };
+		162ED6932ACF2966008E0622 /* MenuActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6922ACF2966008E0622 /* MenuActionButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +91,14 @@
 		162ED6722ACF188D008E0622 /* ARCADE_R.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARCADE_R.TTF; sourceTree = "<group>"; };
 		162ED6762ACF19F0008E0622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewModel.swift; sourceTree = "<group>"; };
-		162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButtonStyle.swift; sourceTree = "<group>"; };
+		162ED67B2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectButtonStyle.swift; sourceTree = "<group>"; };
 		162ED67D2ACF1FF6008E0622 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		162ED6812ACF2334008E0622 /* death2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death2.mp3; sourceTree = "<group>"; };
 		162ED6852ACF23CA008E0622 /* rings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rings.mp3; sourceTree = "<group>"; };
 		162ED68C2ACF24F3008E0622 /* select1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select1.mp3; sourceTree = "<group>"; };
+		162ED68E2ACF2650008E0622 /* MenuSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectButton.swift; sourceTree = "<group>"; };
+		162ED6902ACF2849008E0622 /* MenuActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButton.swift; sourceTree = "<group>"; };
+		162ED6922ACF2966008E0622 /* MenuActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +250,10 @@
 		162ED66C2ACF154E008E0622 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */,
+				162ED67B2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift */,
+				162ED68E2ACF2650008E0622 /* MenuSelectButton.swift */,
+				162ED6902ACF2849008E0622 /* MenuActionButton.swift */,
+				162ED6922ACF2966008E0622 /* MenuActionButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -454,12 +463,15 @@
 				162ED64F2ACE713F008E0622 /* GameConfig.swift in Sources */,
 				162ED5D72ACDF194008E0622 /* ContentView.swift in Sources */,
 				162ED6562ACE72E1008E0622 /* Sounds.swift in Sources */,
-				162ED67C2ACF1DCE008E0622 /* OptionButtonStyle.swift in Sources */,
+				162ED67C2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift in Sources */,
 				162ED5D52ACDF194008E0622 /* Experimental1App.swift in Sources */,
 				162ED67E2ACF1FF6008E0622 /* MenuView.swift in Sources */,
 				162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */,
+				162ED6932ACF2966008E0622 /* MenuActionButtonStyle.swift in Sources */,
+				162ED68F2ACF2650008E0622 /* MenuSelectButton.swift in Sources */,
 				162ED6542ACE726B008E0622 /* Constants.swift in Sources */,
 				162ED6482ACE6A5C008E0622 /* Target.swift in Sources */,
+				162ED6912ACF2849008E0622 /* MenuActionButton.swift in Sources */,
 				162ED64C2ACE6D80008E0622 /* TargetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
