@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    
-    @State var gameViewModel = GameViewModel()
+    @State var gameViewModel: GameViewModel
     @State var targetPosition = CGPoint(x: 100, y: 100)
 
     var body: some View {
@@ -29,5 +28,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView()
+    GameView(gameViewModel: GameViewModel(gameMode: .headshotCity, selectedGun: .deagleDiva))
 }

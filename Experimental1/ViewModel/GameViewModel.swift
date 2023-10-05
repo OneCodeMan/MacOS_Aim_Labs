@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GameViewModel: ObservableObject {
     let MIN_X: CGFloat = 300.0
@@ -15,7 +16,14 @@ class GameViewModel: ObservableObject {
     
     @Published var targetPosition = CGPoint(x: 100, y: 100)
     
-    let gameMode: GameMode = .singleFluctuatingTarget
+    @State var gameMode: GameMode = GameMode.headshotCity
+    @State var selectedGun: SelectedGun = SelectedGun.deagleDiva
+    
+    init(targetPosition: CGPoint = CGPoint(x: 100, y: 100), gameMode: GameMode, selectedGun: SelectedGun) {
+        self.targetPosition = targetPosition
+        self.gameMode = gameMode
+        self.selectedGun = selectedGun
+    }
     
     func generateNewTargetPosition() {
         let randomX = CGFloat.random(in: MIN_X..<MAX_X)

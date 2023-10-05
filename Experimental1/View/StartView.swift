@@ -16,7 +16,7 @@ struct StartView: View {
     var body: some View {
         Group {
             if gameInProgress {
-                GameView()
+                GameView(gameViewModel: GameViewModel(gameMode: selectedGameMode, selectedGun: selectedGun))
             } else {
                 MenuView(selectedGameMode: $selectedGameMode, selectedGun: $selectedGun, gameInProgress: $gameInProgress, musicPlaying: $musicPlaying)
             }
