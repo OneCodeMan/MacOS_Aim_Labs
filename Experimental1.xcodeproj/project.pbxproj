@@ -29,6 +29,12 @@
 		162ED6692ACF1337008E0622 /* death1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6682ACF1337008E0622 /* death1.mp3 */; };
 		162ED66B2ACF1522008E0622 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66A2ACF1522008E0622 /* StartView.swift */; };
 		162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66D2ACF159C008E0622 /* GameMode.swift */; };
+		162ED6732ACF189A008E0622 /* ARCADE_N.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6712ACF188D008E0622 /* ARCADE_N.TTF */; };
+		162ED6742ACF189A008E0622 /* ARCADE_I.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6702ACF188D008E0622 /* ARCADE_I.TTF */; };
+		162ED6752ACF189A008E0622 /* ARCADE_R.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6722ACF188D008E0622 /* ARCADE_R.TTF */; };
+		162ED6772ACF19F0008E0622 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6762ACF19F0008E0622 /* Info.plist */; };
+		162ED67A2ACF1C6E008E0622 /* GameSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */; };
+		162ED67C2ACF1DCE008E0622 /* OptionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,12 @@
 		162ED6682ACF1337008E0622 /* death1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death1.mp3; sourceTree = "<group>"; };
 		162ED66A2ACF1522008E0622 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		162ED66D2ACF159C008E0622 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		162ED6702ACF188D008E0622 /* ARCADE_I.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARCADE_I.TTF; sourceTree = "<group>"; };
+		162ED6712ACF188D008E0622 /* ARCADE_N.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARCADE_N.TTF; sourceTree = "<group>"; };
+		162ED6722ACF188D008E0622 /* ARCADE_R.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARCADE_R.TTF; sourceTree = "<group>"; };
+		162ED6762ACF19F0008E0622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewModel.swift; sourceTree = "<group>"; };
+		162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,14 +137,12 @@
 		162ED5D32ACDF194008E0622 /* Experimental1 */ = {
 			isa = PBXGroup;
 			children = (
+				162ED6782ACF1B20008E0622 /* Other */,
 				162ED65B2ACE7A7B008E0622 /* ViewModel */,
 				162ED6522ACE725E008E0622 /* Util */,
 				162ED64D2ACE6DE2008E0622 /* View */,
 				162ED6492ACE6CCF008E0622 /* Assets */,
 				162ED6462ACE46BF008E0622 /* Model */,
-				162ED5D42ACDF194008E0622 /* Experimental1App.swift */,
-				162ED5D62ACDF194008E0622 /* ContentView.swift */,
-				162ED5D82ACDF196008E0622 /* Assets.xcassets */,
 				162ED5DD2ACDF196008E0622 /* Experimental1.entitlements */,
 				162ED5DA2ACDF196008E0622 /* Preview Content */,
 			);
@@ -177,6 +187,7 @@
 		162ED6492ACE6CCF008E0622 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				162ED66F2ACF187A008E0622 /* Fonts */,
 				162ED64A2ACE6CD2008E0622 /* Audio */,
 			);
 			path = Assets;
@@ -218,6 +229,7 @@
 		162ED65B2ACE7A7B008E0622 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */,
 				162ED65C2ACE7A83008E0622 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
@@ -226,8 +238,30 @@
 		162ED66C2ACF154E008E0622 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		162ED66F2ACF187A008E0622 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6702ACF188D008E0622 /* ARCADE_I.TTF */,
+				162ED6712ACF188D008E0622 /* ARCADE_N.TTF */,
+				162ED6722ACF188D008E0622 /* ARCADE_R.TTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		162ED6782ACF1B20008E0622 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6762ACF19F0008E0622 /* Info.plist */,
+				162ED5D42ACDF194008E0622 /* Experimental1App.swift */,
+				162ED5D62ACDF194008E0622 /* ContentView.swift */,
+				162ED5D82ACDF196008E0622 /* Assets.xcassets */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,10 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				162ED6512ACE7247008E0622 /* glock.mp3 in Resources */,
+				162ED6752ACF189A008E0622 /* ARCADE_R.TTF in Resources */,
 				162ED5DC2ACDF196008E0622 /* Preview Assets.xcassets in Resources */,
 				162ED6592ACE7945008E0622 /* deagle.mp3 in Resources */,
 				162ED5D92ACDF196008E0622 /* Assets.xcassets in Resources */,
+				162ED6742ACF189A008E0622 /* ARCADE_I.TTF in Resources */,
 				162ED65A2ACE7946008E0622 /* M1911.mp3 in Resources */,
+				162ED6732ACF189A008E0622 /* ARCADE_N.TTF in Resources */,
+				162ED6772ACF19F0008E0622 /* Info.plist in Resources */,
 				162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */,
 				162ED6692ACF1337008E0622 /* death1.mp3 in Resources */,
 			);
@@ -369,9 +407,11 @@
 				162ED66B2ACF1522008E0622 /* StartView.swift in Sources */,
 				162ED65D2ACE7A83008E0622 /* GameViewModel.swift in Sources */,
 				162ED6002ACDF248008E0622 /* GameView.swift in Sources */,
+				162ED67A2ACF1C6E008E0622 /* GameSettingsViewModel.swift in Sources */,
 				162ED64F2ACE713F008E0622 /* GameConfig.swift in Sources */,
 				162ED5D72ACDF194008E0622 /* ContentView.swift in Sources */,
 				162ED6562ACE72E1008E0622 /* Sounds.swift in Sources */,
+				162ED67C2ACF1DCE008E0622 /* OptionButtonStyle.swift in Sources */,
 				162ED5D52ACDF194008E0622 /* Experimental1App.swift in Sources */,
 				162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */,
 				162ED6542ACE726B008E0622 /* Constants.swift in Sources */,
