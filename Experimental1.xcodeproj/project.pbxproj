@@ -27,6 +27,8 @@
 		162ED6632ACF0F85008E0622 /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6622ACF0F85008E0622 /* View+Hidden.swift */; };
 		162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6662ACF12CB008E0622 /* death2.mp3 */; };
 		162ED6692ACF1337008E0622 /* death1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6682ACF1337008E0622 /* death1.mp3 */; };
+		162ED66B2ACF1522008E0622 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66A2ACF1522008E0622 /* StartView.swift */; };
+		162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66D2ACF159C008E0622 /* GameMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		162ED6622ACF0F85008E0622 /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
 		162ED6662ACF12CB008E0622 /* death2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = death2.mp3; path = "../../../../experimental1-assets/death-sounds/death2.mp3"; sourceTree = "<group>"; };
 		162ED6682ACF1337008E0622 /* death1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death1.mp3; sourceTree = "<group>"; };
+		162ED66A2ACF1522008E0622 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		162ED66D2ACF159C008E0622 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			children = (
 				162ED6472ACE6A5C008E0622 /* Target.swift */,
 				162ED64E2ACE713F008E0622 /* GameConfig.swift */,
+				162ED66D2ACF159C008E0622 /* GameMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,8 +197,10 @@
 		162ED64D2ACE6DE2008E0622 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				162ED66C2ACF154E008E0622 /* Components */,
 				162ED5FF2ACDF248008E0622 /* GameView.swift */,
 				162ED64B2ACE6D80008E0622 /* TargetView.swift */,
+				162ED66A2ACF1522008E0622 /* StartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +221,13 @@
 				162ED65C2ACE7A83008E0622 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		162ED66C2ACF154E008E0622 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,12 +366,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				162ED6632ACF0F85008E0622 /* View+Hidden.swift in Sources */,
+				162ED66B2ACF1522008E0622 /* StartView.swift in Sources */,
 				162ED65D2ACE7A83008E0622 /* GameViewModel.swift in Sources */,
 				162ED6002ACDF248008E0622 /* GameView.swift in Sources */,
 				162ED64F2ACE713F008E0622 /* GameConfig.swift in Sources */,
 				162ED5D72ACDF194008E0622 /* ContentView.swift in Sources */,
 				162ED6562ACE72E1008E0622 /* Sounds.swift in Sources */,
 				162ED5D52ACDF194008E0622 /* Experimental1App.swift in Sources */,
+				162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */,
 				162ED6542ACE726B008E0622 /* Constants.swift in Sources */,
 				162ED6482ACE6A5C008E0622 /* Target.swift in Sources */,
 				162ED64C2ACE6D80008E0622 /* TargetView.swift in Sources */,

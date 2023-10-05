@@ -15,6 +15,8 @@ class GameViewModel: ObservableObject {
     
     @Published var targetPosition = CGPoint(x: 100, y: 100)
     
+    let gameMode: GameMode = .singleFluctuatingTarget
+    
     func generateNewTargetPosition() {
         let randomX = CGFloat.random(in: MIN_X..<MAX_X)
         let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)

@@ -21,9 +21,9 @@ struct GameView: View {
                 targetPosition = gameViewModel.targetPosition
             }
             .position(targetPosition)
-            .onTapGesture {
-                gameViewModel.playShootingSound()
-            }
+        }
+        .onTapGesture {
+            gameViewModel.playShootingSound()
         }
     }
 }
