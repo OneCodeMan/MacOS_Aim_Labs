@@ -12,7 +12,7 @@ struct Constants {
     
     // MARK: AUDIO
 
-    struct TargetHitSounds {
+    struct ShootingSound {
         static let glockSoundString = "glock.mp3"
         static let m1911SoundString = "M1911.mp3"
         static let deagleSoundString = "deagle.mp3"

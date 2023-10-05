@@ -16,13 +16,23 @@ class GameViewModel: ObservableObject {
     
     @Published var targetPosition = CGPoint(x: 100, y: 100)
     
-    @State var gameMode: GameMode = GameMode.headshotCity
-    @State var selectedGun: SelectedGun = SelectedGun.deagleDiva
+    var gameMode: GameMode
+    var selectedGun: SelectedGun
+    var gunSound: String = Constants.ShootingSound.deagleSoundString
     
     init(targetPosition: CGPoint = CGPoint(x: 100, y: 100), gameMode: GameMode, selectedGun: SelectedGun) {
         self.targetPosition = targetPosition
         self.gameMode = gameMode
         self.selectedGun = selectedGun
+        
+        switch selectedGun {
+        case .teamGlock:
+            self.gunSound = Constants.ShootingSound.glockSoundString
+        case .deagleDiva:
+            self.gunSound = Constants.ShootingSound.deagleSoundString
+        case .m1Shooter:
+            self.gunSound = Constants.ShootingSound.m1911SoundString
+        }
     }
     
     func generateNewTargetPosition() {
@@ -30,10 +40,10 @@ class GameViewModel: ObservableObject {
         let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
         
         self.targetPosition = CGPoint(x: randomX, y: randomY)
-        print("ViewModel targetPosition: \(self.targetPosition)")
     }
     
     func playShootingSound() {
-        Sounds.playSounds(soundfile: Constants.TargetHitSounds.deagleSoundString)
+        print("Gun sound is \(self.gunSound)")
+        Sounds.playSounds(soundfile: self.gunSound)
     }
 }
