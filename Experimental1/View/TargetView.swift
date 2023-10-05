@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TargetView: View {
-    let target: Target
+    @State var targetHitpoints: Int = 1
+    @State var targetDestroyed = false
+    var target: Target
     
     var handlePosition: () -> Void
 
@@ -17,8 +19,18 @@ struct TargetView: View {
             .fill(target.colour)
             .frame(width: target.width, height: target.height)
             .onTapGesture {
-                handlePosition()
-                Sounds.playSounds(soundfile: target.hitSound)
+        
+                if targetHitpoints > 1 {
+                    targetHitpoints -= 1
+                    handlePosition()
+                } else {
+                    Sounds.playSounds(soundfile: target.destroySound)
+                    targetDestroyed.toggle()
+                }
             }
+            .hidden(targetDestroyed)
+            .onAppear(perform: {
+                self.targetHitpoints = target.hitpoints
+            })
     }
 }

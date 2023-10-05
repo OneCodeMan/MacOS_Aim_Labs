@@ -24,6 +24,9 @@
 		162ED6592ACE7945008E0622 /* deagle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6572ACE7945008E0622 /* deagle.mp3 */; };
 		162ED65A2ACE7946008E0622 /* M1911.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6582ACE7945008E0622 /* M1911.mp3 */; };
 		162ED65D2ACE7A83008E0622 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED65C2ACE7A83008E0622 /* GameViewModel.swift */; };
+		162ED6632ACF0F85008E0622 /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6622ACF0F85008E0622 /* View+Hidden.swift */; };
+		162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6662ACF12CB008E0622 /* death2.mp3 */; };
+		162ED6692ACF1337008E0622 /* death1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6682ACF1337008E0622 /* death1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		162ED6572ACE7945008E0622 /* deagle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deagle.mp3; sourceTree = "<group>"; };
 		162ED6582ACE7945008E0622 /* M1911.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = M1911.mp3; sourceTree = "<group>"; };
 		162ED65C2ACE7A83008E0622 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		162ED6622ACF0F85008E0622 /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
+		162ED6662ACF12CB008E0622 /* death2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = death2.mp3; path = "../../../../experimental1-assets/death-sounds/death2.mp3"; sourceTree = "<group>"; };
+		162ED6682ACF1337008E0622 /* death1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,8 @@
 		162ED64A2ACE6CD2008E0622 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				162ED6682ACF1337008E0622 /* death1.mp3 */,
+				162ED6662ACF12CB008E0622 /* death2.mp3 */,
 				162ED6572ACE7945008E0622 /* deagle.mp3 */,
 				162ED6582ACE7945008E0622 /* M1911.mp3 */,
 				162ED6502ACE7247008E0622 /* glock.mp3 */,
@@ -195,6 +203,7 @@
 			children = (
 				162ED6552ACE72E1008E0622 /* Sounds.swift */,
 				162ED6532ACE726B008E0622 /* Constants.swift */,
+				162ED6622ACF0F85008E0622 /* View+Hidden.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -316,6 +325,8 @@
 				162ED6592ACE7945008E0622 /* deagle.mp3 in Resources */,
 				162ED5D92ACDF196008E0622 /* Assets.xcassets in Resources */,
 				162ED65A2ACE7946008E0622 /* M1911.mp3 in Resources */,
+				162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */,
+				162ED6692ACF1337008E0622 /* death1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162ED6632ACF0F85008E0622 /* View+Hidden.swift in Sources */,
 				162ED65D2ACE7A83008E0622 /* GameViewModel.swift in Sources */,
 				162ED6002ACDF248008E0622 /* GameView.swift in Sources */,
 				162ED64F2ACE713F008E0622 /* GameConfig.swift in Sources */,

@@ -9,18 +9,21 @@ import SwiftUI
 
 struct GameView: View {
     
-    @State private var targetPosition = CGPoint(x: 100, y: 100)
     @State var gameViewModel = GameViewModel()
+    @State var targetPosition = CGPoint(x: 100, y: 100)
 
     var body: some View {
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
             
             TargetView(target: Target()) {
-                
-                targetPosition = gameViewModel.generateNewTargetPosition()
+                gameViewModel.generateNewTargetPosition()
+                targetPosition = gameViewModel.targetPosition
             }
             .position(targetPosition)
+            .onTapGesture {
+                gameViewModel.playShootingSound()
+            }
         }
     }
 }

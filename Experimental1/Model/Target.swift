@@ -14,15 +14,14 @@ struct Target {
     let shape: any Shape
     let width: CGFloat
     let height: CGFloat
-    let hitSound: String
+    let destroySound: String
     
-    init(colour: Color = Color.red, hitpoints: Int = 1, shape: any Shape = Circle(), width: CGFloat = 40.0, height: CGFloat = 40.0, hitSound: String = Constants.TargetHitSounds.m1911SoundString) {
+    init(colour: Color = Color.red, hitpoints: Int = 1, shape: any Shape = Circle(), width: CGFloat = 40.0, height: CGFloat = 40.0, destroySound: String = Constants.TargetDestroySounds.death2SoundString) {
         self.colour = colour
         self.hitpoints = hitpoints
         self.shape = shape
         self.width = width
         self.height = height
-        self.hitSound = hitSound
+        self.destroySound = destroySound
     }
-    
 }

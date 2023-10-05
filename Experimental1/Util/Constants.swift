@@ -15,4 +15,9 @@ struct Constants {
         static let deagleSoundString = "deagle.mp3"
     }
     
+    struct TargetDestroySounds {
+        static let death1SoundString = "death1.mp3"
+        static let death2SoundString = "death2.mp3"
+    }
+    
 }
