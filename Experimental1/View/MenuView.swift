@@ -11,6 +11,7 @@ struct MenuView: View {
     @Binding var selectedGameMode: GameMode
     @Binding var selectedGun: SelectedGun
     @Binding var gameInProgress: Bool
+    @Binding var musicPlaying: Bool
     
     var body: some View {
         VStack {
@@ -32,6 +33,7 @@ struct MenuView: View {
                 
                 Button {
                     self.selectedGameMode = .singleFluctuatingTarget
+                    Sounds.playSounds(soundfile: Constants.MenuSounds.genericMenuItemSelectString)
                 } label: {
                     Text("SINGLE FLUCTUATING")
                 }
@@ -77,6 +79,7 @@ struct MenuView: View {
             
             Button {
                 gameInProgress.toggle()
+                musicPlaying.toggle()
             } label: {
                 Text("LET'S PLAY!!")
             }

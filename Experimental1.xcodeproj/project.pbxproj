@@ -25,7 +25,6 @@
 		162ED65A2ACE7946008E0622 /* M1911.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6582ACE7945008E0622 /* M1911.mp3 */; };
 		162ED65D2ACE7A83008E0622 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED65C2ACE7A83008E0622 /* GameViewModel.swift */; };
 		162ED6632ACF0F85008E0622 /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6622ACF0F85008E0622 /* View+Hidden.swift */; };
-		162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6662ACF12CB008E0622 /* death2.mp3 */; };
 		162ED6692ACF1337008E0622 /* death1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6682ACF1337008E0622 /* death1.mp3 */; };
 		162ED66B2ACF1522008E0622 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66A2ACF1522008E0622 /* StartView.swift */; };
 		162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED66D2ACF159C008E0622 /* GameMode.swift */; };
@@ -36,6 +35,9 @@
 		162ED67A2ACF1C6E008E0622 /* GameSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */; };
 		162ED67C2ACF1DCE008E0622 /* OptionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */; };
 		162ED67E2ACF1FF6008E0622 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED67D2ACF1FF6008E0622 /* MenuView.swift */; };
+		162ED6832ACF23A9008E0622 /* death2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6812ACF2334008E0622 /* death2.mp3 */; };
+		162ED6862ACF23CA008E0622 /* rings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED6852ACF23CA008E0622 /* rings.mp3 */; };
+		162ED68D2ACF24F3008E0622 /* select1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 162ED68C2ACF24F3008E0622 /* select1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +80,6 @@
 		162ED6582ACE7945008E0622 /* M1911.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = M1911.mp3; sourceTree = "<group>"; };
 		162ED65C2ACE7A83008E0622 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		162ED6622ACF0F85008E0622 /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
-		162ED6662ACF12CB008E0622 /* death2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = death2.mp3; path = "../../../../experimental1-assets/death-sounds/death2.mp3"; sourceTree = "<group>"; };
 		162ED6682ACF1337008E0622 /* death1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death1.mp3; sourceTree = "<group>"; };
 		162ED66A2ACF1522008E0622 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		162ED66D2ACF159C008E0622 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
@@ -89,6 +90,9 @@
 		162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewModel.swift; sourceTree = "<group>"; };
 		162ED67B2ACF1DCE008E0622 /* OptionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButtonStyle.swift; sourceTree = "<group>"; };
 		162ED67D2ACF1FF6008E0622 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		162ED6812ACF2334008E0622 /* death2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = death2.mp3; sourceTree = "<group>"; };
+		162ED6852ACF23CA008E0622 /* rings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rings.mp3; sourceTree = "<group>"; };
+		162ED68C2ACF24F3008E0622 /* select1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,11 +202,10 @@
 		162ED64A2ACE6CD2008E0622 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				162ED6682ACF1337008E0622 /* death1.mp3 */,
-				162ED6662ACF12CB008E0622 /* death2.mp3 */,
-				162ED6572ACE7945008E0622 /* deagle.mp3 */,
-				162ED6582ACE7945008E0622 /* M1911.mp3 */,
-				162ED6502ACE7247008E0622 /* glock.mp3 */,
+				162ED6872ACF23F3008E0622 /* Menu */,
+				162ED6842ACF23BF008E0622 /* Theme */,
+				162ED6802ACF232E008E0622 /* Termination */,
+				162ED67F2ACF2325008E0622 /* Weapons */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -265,6 +268,41 @@
 				162ED5D82ACDF196008E0622 /* Assets.xcassets */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		162ED67F2ACF2325008E0622 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6502ACE7247008E0622 /* glock.mp3 */,
+				162ED6572ACE7945008E0622 /* deagle.mp3 */,
+				162ED6582ACE7945008E0622 /* M1911.mp3 */,
+			);
+			path = Weapons;
+			sourceTree = "<group>";
+		};
+		162ED6802ACF232E008E0622 /* Termination */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6812ACF2334008E0622 /* death2.mp3 */,
+				162ED6682ACF1337008E0622 /* death1.mp3 */,
+			);
+			path = Termination;
+			sourceTree = "<group>";
+		};
+		162ED6842ACF23BF008E0622 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6852ACF23CA008E0622 /* rings.mp3 */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		162ED6872ACF23F3008E0622 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				162ED68C2ACF24F3008E0622 /* select1.mp3 */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,11 +414,13 @@
 				162ED5DC2ACDF196008E0622 /* Preview Assets.xcassets in Resources */,
 				162ED6592ACE7945008E0622 /* deagle.mp3 in Resources */,
 				162ED5D92ACDF196008E0622 /* Assets.xcassets in Resources */,
+				162ED68D2ACF24F3008E0622 /* select1.mp3 in Resources */,
 				162ED6742ACF189A008E0622 /* ARCADE_I.TTF in Resources */,
+				162ED6862ACF23CA008E0622 /* rings.mp3 in Resources */,
+				162ED6832ACF23A9008E0622 /* death2.mp3 in Resources */,
 				162ED65A2ACE7946008E0622 /* M1911.mp3 in Resources */,
 				162ED6732ACF189A008E0622 /* ARCADE_N.TTF in Resources */,
 				162ED6772ACF19F0008E0622 /* Info.plist in Resources */,
-				162ED6672ACF12CB008E0622 /* death2.mp3 in Resources */,
 				162ED6692ACF1337008E0622 /* death1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

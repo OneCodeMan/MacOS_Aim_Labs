@@ -9,6 +9,9 @@ import Foundation
 
 struct Constants {
     
+    
+    // MARK: AUDIO
+
     struct TargetHitSounds {
         static let glockSoundString = "glock.mp3"
         static let m1911SoundString = "M1911.mp3"
@@ -20,4 +23,11 @@ struct Constants {
         static let death2SoundString = "death2.mp3"
     }
     
+    struct MenuSounds {
+        static let genericMenuItemSelectString = "select1.mp3"
+    }
+    
+    struct ThemeMusic {
+        static let rings = "rings.mp3"
+    }
 }
