@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class GameViewModel: ObservableObject {
+    let background = Color.blue
     let MIN_X: CGFloat = 300.0
     let MAX_X: CGFloat = 800.0
     let MIN_Y: CGFloat = 300.0
@@ -43,7 +44,6 @@ class GameViewModel: ObservableObject {
     }
     
     func playShootingSound() {
-        print("Gun sound is \(self.gunSound)")
         Sounds.playSounds(soundfile: self.gunSound)
     }
 }

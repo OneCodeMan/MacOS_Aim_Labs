@@ -13,17 +13,25 @@ struct GameView: View {
 
     var body: some View {
         ZStack {
-            Color.blue.edgesIgnoringSafeArea(.all)
+            gameViewModel.background.edgesIgnoringSafeArea(.all)
             
             TargetView(target: Target()) {
-                gameViewModel.generateNewTargetPosition()
-                targetPosition = gameViewModel.targetPosition
+                generateNewTargetPosition()
             }
             .position(targetPosition)
-        }
+
+        } // ZStack
         .onTapGesture {
             gameViewModel.playShootingSound()
         }
+        .onAppear {
+            generateNewTargetPosition()
+        }
+    }
+    
+    func generateNewTargetPosition() {
+        gameViewModel.generateNewTargetPosition()
+        targetPosition = gameViewModel.targetPosition
     }
 }
 
