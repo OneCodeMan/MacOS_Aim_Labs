@@ -14,6 +14,9 @@
 		162ED5E72ACDF196008E0622 /* Experimental1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED5E62ACDF196008E0622 /* Experimental1Tests.swift */; };
 		162ED5F12ACDF196008E0622 /* Experimental1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED5F02ACDF196008E0622 /* Experimental1UITests.swift */; };
 		162ED5F32ACDF196008E0622 /* Experimental1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED5F22ACDF196008E0622 /* Experimental1UITestsLaunchTests.swift */; };
+		162ED6002ACDF248008E0622 /* ShootingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED5FF2ACDF248008E0622 /* ShootingScreenView.swift */; };
+		162ED6482ACE6A5C008E0622 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6472ACE6A5C008E0622 /* Target.swift */; };
+		162ED64C2ACE6D80008E0622 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED64B2ACE6D80008E0622 /* TargetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		162ED5EC2ACDF196008E0622 /* Experimental1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Experimental1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		162ED5F02ACDF196008E0622 /* Experimental1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experimental1UITests.swift; sourceTree = "<group>"; };
 		162ED5F22ACDF196008E0622 /* Experimental1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experimental1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		162ED5FF2ACDF248008E0622 /* ShootingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingScreenView.swift; sourceTree = "<group>"; };
+		162ED6472ACE6A5C008E0622 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		162ED64B2ACE6D80008E0622 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,15 @@
 		162ED5D32ACDF194008E0622 /* Experimental1 */ = {
 			isa = PBXGroup;
 			children = (
+				162ED64D2ACE6DE2008E0622 /* View */,
+				162ED6492ACE6CCF008E0622 /* Assets */,
+				162ED6462ACE46BF008E0622 /* Model */,
 				162ED5D42ACDF194008E0622 /* Experimental1App.swift */,
 				162ED5D62ACDF194008E0622 /* ContentView.swift */,
 				162ED5D82ACDF196008E0622 /* Assets.xcassets */,
 				162ED5DD2ACDF196008E0622 /* Experimental1.entitlements */,
 				162ED5DA2ACDF196008E0622 /* Preview Content */,
+				162ED5FF2ACDF248008E0622 /* ShootingScreenView.swift */,
 			);
 			path = Experimental1;
 			sourceTree = "<group>";
@@ -127,6 +137,37 @@
 				162ED5F22ACDF196008E0622 /* Experimental1UITestsLaunchTests.swift */,
 			);
 			path = Experimental1UITests;
+			sourceTree = "<group>";
+		};
+		162ED6462ACE46BF008E0622 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				162ED6472ACE6A5C008E0622 /* Target.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		162ED6492ACE6CCF008E0622 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				162ED64A2ACE6CD2008E0622 /* Audio */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		162ED64A2ACE6CD2008E0622 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		162ED64D2ACE6DE2008E0622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				162ED64B2ACE6D80008E0622 /* TargetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162ED6002ACDF248008E0622 /* ShootingScreenView.swift in Sources */,
 				162ED5D72ACDF194008E0622 /* ContentView.swift in Sources */,
 				162ED5D52ACDF194008E0622 /* Experimental1App.swift in Sources */,
+				162ED6482ACE6A5C008E0622 /* Target.swift in Sources */,
+				162ED64C2ACE6D80008E0622 /* TargetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
