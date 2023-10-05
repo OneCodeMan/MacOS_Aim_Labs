@@ -10,14 +10,15 @@ import SwiftUI
 struct TargetView: View {
     let target: Target
     
-    var onTap: () -> Void
+    var handlePosition: () -> Void
 
     var body: some View {
         Circle()
             .fill(target.colour)
             .frame(width: target.width, height: target.height)
             .onTapGesture {
-                onTap()
+                handlePosition()
+                Sounds.playSounds(soundfile: target.hitSound)
             }
     }
 }

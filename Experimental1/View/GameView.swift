@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-struct StartScreenView: View {
+struct GameView: View {
     
     @State private var targetPosition = CGPoint(x: 100, y: 100)
+    @State var gameViewModel = GameViewModel()
 
     var body: some View {
         ZStack {
             Color.blue.edgesIgnoringSafeArea(.all)
             
             TargetView(target: Target()) {
-                let randomX = CGFloat.random(in: 300..<800)
-                let randomY = CGFloat.random(in: 300..<700)
                 
-                targetPosition = CGPoint(x: randomX, y: randomY)
+                targetPosition = gameViewModel.generateNewTargetPosition()
             }
             .position(targetPosition)
         }
@@ -27,5 +26,5 @@ struct StartScreenView: View {
 }
 
 #Preview {
-    StartScreenView()
+    GameView()
 }
