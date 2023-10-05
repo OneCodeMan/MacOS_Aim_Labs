@@ -26,10 +26,13 @@ struct GameView: View {
         }
         .onAppear {
             generateNewTargetPosition()
+            print("GameView -- onAppear\n")
+            print("Game Mode: \(gameViewModel.gameMode.description)")
+            print("Selected Gun: \(gameViewModel.selectedGun.description)")
         }
     }
     
-    func generateNewTargetPosition() {
+    private func generateNewTargetPosition() {
         gameViewModel.generateNewTargetPosition()
         targetPosition = gameViewModel.targetPosition
     }
