@@ -21,7 +21,7 @@ struct GameView: View {
                     generateNewTargetPosition()
                 }
                 .position(targetPosition)
-            case .multipleTargets:
+            case .multipleTargets: // TODO
                 TargetView(target: Target()) {
                     generateNewTargetPosition()
                 }
@@ -30,6 +30,10 @@ struct GameView: View {
                     generateNewTargetPosition()
                 }
                 .position(targetPosition)
+            case .ramboHeadshot: // TODO
+                TargetView(target: Target()) {
+                    generateNewTargetPosition()
+                }
             }
 
         } // ZStack

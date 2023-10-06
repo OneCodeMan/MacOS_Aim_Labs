@@ -11,6 +11,7 @@ enum GameMode: Int, CustomStringConvertible {
     case singleFluctuatingTarget = 1
     case multipleTargets = 2
     case headshotCity = 3
+    case ramboHeadshot = 4
     
     var description: String {
         switch self {
@@ -20,6 +21,8 @@ enum GameMode: Int, CustomStringConvertible {
             "Multiple targets"
         case .headshotCity:
             "Headshot city"
+        case .ramboHeadshot:
+            "Rambo headshot"
         }
     }
 }
