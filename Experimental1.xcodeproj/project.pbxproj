@@ -219,6 +219,7 @@
 		162ED64D2ACE6DE2008E0622 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				162ED6942ACF7489008E0622 /* Modes */,
 				162ED66C2ACF154E008E0622 /* Components */,
 				162ED5FF2ACDF248008E0622 /* GameView.swift */,
 				162ED64B2ACE6D80008E0622 /* TargetView.swift */,
@@ -312,6 +313,13 @@
 				162ED68C2ACF24F3008E0622 /* select1.mp3 */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		162ED6942ACF7489008E0622 /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

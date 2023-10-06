@@ -19,6 +19,8 @@ struct TargetView: View {
             .fill(target.colour)
             .frame(width: target.width, height: target.height)
             .onTapGesture {
+                
+                Sounds.playSounds(soundfile: Constants.TargetDestroySounds.death2SoundString)
         
                 if targetHitpoints > 1 {
                     targetHitpoints -= 1

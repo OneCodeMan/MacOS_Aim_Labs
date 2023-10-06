@@ -23,5 +23,8 @@ struct Target {
         self.width = width
         self.height = height
         self.destroySound = destroySound
+        
+        print("Target, self.destroySound:")
+        print(self.destroySound)
     }
 }

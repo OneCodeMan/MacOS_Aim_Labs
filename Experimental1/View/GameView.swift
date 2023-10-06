@@ -15,10 +15,22 @@ struct GameView: View {
         ZStack {
             gameViewModel.background.edgesIgnoringSafeArea(.all)
             
-            TargetView(target: Target()) {
-                generateNewTargetPosition()
+            switch gameViewModel.gameMode {
+            case .singleFluctuatingTarget:
+                TargetView(target: Target(hitpoints: gameViewModel.SINGLE_TARGET_HP)) {
+                    generateNewTargetPosition()
+                }
+                .position(targetPosition)
+            case .multipleTargets:
+                TargetView(target: Target()) {
+                    generateNewTargetPosition()
+                }
+            case .headshotCity:
+                TargetView(target: Target(hitpoints: gameViewModel.HEADSHOT_CITY_HP)) {
+                    generateNewTargetPosition()
+                }
+                .position(targetPosition)
             }
-            .position(targetPosition)
 
         } // ZStack
         .onTapGesture {
