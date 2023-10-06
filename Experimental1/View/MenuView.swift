@@ -24,12 +24,6 @@ struct MenuView: View {
             
             // Button group here
             HStack {
-                MenuSelectButton(title: "HEADSHOT CITY") {
-                    self.selectedGameMode = .headshotCity
-                }
-                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .headshotCity))
-                
-                
                 MenuSelectButton(title: "SINGLE FLUCTUATING TARGET") {
                     self.selectedGameMode = .singleFluctuatingTarget
                 }
@@ -39,6 +33,16 @@ struct MenuView: View {
                     self.selectedGameMode = .multipleTargets
                 }
                 .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .multipleTargets))
+                
+                MenuSelectButton(title: "HEADSHOT CITY") {
+                    self.selectedGameMode = .headshotCity
+                }
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .headshotCity))
+                
+                MenuSelectButton(title: "RAMBO HEADSHOT") {
+                    self.selectedGameMode = .ramboHeadshot
+                }
+                .buttonStyle(MenuSelectButtonStyle(isSelected: self.selectedGameMode == .ramboHeadshot))
             }
             .padding()
             

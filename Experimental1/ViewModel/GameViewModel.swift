@@ -28,8 +28,11 @@ class GameViewModel: ObservableObject {
     @Published var targetPosition = CGPoint(x: 100, y: 100)
     
     // MARK: Multiple targets
-    let MAX_TARGETS = 10
+    let MAX_TARGETS_MULTIPLE = 10
     @Published var targetPositions = [CGPoint(x: 350, y: 500), CGPoint(x: 520, y: 230), CGPoint(x: 420, y: 569)]
+    
+    // MARK: Rambo headshot
+    let MAX_TARGETS_HEADSHOT_RAMBO = 4
     
     // Other stuff
     
@@ -60,21 +63,18 @@ class GameViewModel: ObservableObject {
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
             let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
             self.targetPosition = CGPoint(x: randomX, y: randomY)
-        case .headshotCity:
+        case .headshotCity, .ramboHeadshot:
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
             self.targetPosition = CGPoint(x: randomX, y: FIXED_Y)
-        case .ramboHeadshot:
-            break
-            
         }
     }
     
-    // For multiple targets
+    // For multiple targets, initially
     func generateNewTargetPositions() {
         switch gameMode {
         case .multipleTargets: // FIXME
             var newTargetPositions = [CGPoint]()
-            for _ in 1...MAX_TARGETS {
+            for _ in 1...MAX_TARGETS_MULTIPLE {
                 let randomX = CGFloat.random(in: MIN_X..<MAX_X)
                 let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
                 let randomPoint = CGPoint(x: randomX, y: randomY)
@@ -83,7 +83,7 @@ class GameViewModel: ObservableObject {
             self.targetPositions = newTargetPositions
         case .ramboHeadshot:
             var newTargetPositions = [CGPoint]()
-            for _ in 1...MAX_TARGETS {
+            for _ in 1...MAX_TARGETS_HEADSHOT_RAMBO {
                 let randomX = CGFloat.random(in: MIN_X..<MAX_X)
                 let randomPoint = CGPoint(x: randomX, y: FIXED_Y)
                 newTargetPositions.append(randomPoint)
