@@ -12,6 +12,7 @@ class GameViewModel: ObservableObject {
     let background = Color.blue
     
     // TODO: I feel like these should be in a class of their own.
+    // SingleTargetClass(), MultipleTargetClass(), etc.
 
     // MARK: Single target
     let MIN_X: CGFloat = 300.0
@@ -24,9 +25,13 @@ class GameViewModel: ObservableObject {
     let FIXED_Y: CGFloat = 500.0
     let HEADSHOT_CITY_HP = 99
     
-    // Other stuff
-    
     @Published var targetPosition = CGPoint(x: 100, y: 100)
+    
+    // MARK: Multiple targets
+    let MAX_TARGETS = 10
+    @Published var targetPositions = [CGPoint(x: 350, y: 500), CGPoint(x: 520, y: 230), CGPoint(x: 420, y: 569)]
+    
+    // Other stuff
     
     var gameMode: GameMode
     var selectedGun: SelectedGun
@@ -47,17 +52,47 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    // For single targets
     func generateNewTargetPosition() {
         
-        if gameMode == .singleFluctuatingTarget {
+        switch gameMode {
+        case .singleFluctuatingTarget, .multipleTargets:
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
             let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
             self.targetPosition = CGPoint(x: randomX, y: randomY)
-        } else if gameMode == .headshotCity {
+        case .headshotCity:
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
             self.targetPosition = CGPoint(x: randomX, y: FIXED_Y)
+        case .ramboHeadshot:
+            break
+            
         }
-       
+    }
+    
+    // For multiple targets
+    func generateNewTargetPositions() {
+        switch gameMode {
+        case .multipleTargets: // FIXME
+            var newTargetPositions = [CGPoint]()
+            for _ in 1...MAX_TARGETS {
+                let randomX = CGFloat.random(in: MIN_X..<MAX_X)
+                let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
+                let randomPoint = CGPoint(x: randomX, y: randomY)
+                newTargetPositions.append(randomPoint)
+            }
+            self.targetPositions = newTargetPositions
+        case .ramboHeadshot:
+            var newTargetPositions = [CGPoint]()
+            for _ in 1...MAX_TARGETS {
+                let randomX = CGFloat.random(in: MIN_X..<MAX_X)
+                let randomPoint = CGPoint(x: randomX, y: FIXED_Y)
+                newTargetPositions.append(randomPoint)
+            }
+            self.targetPositions = newTargetPositions
+        case .singleFluctuatingTarget, .headshotCity:
+            break
+
+        }
     }
     
     func playShootingSound() {

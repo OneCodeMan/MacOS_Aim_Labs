@@ -9,7 +9,8 @@ import SwiftUI
 
 struct GameView: View {
     @State var gameViewModel: GameViewModel
-    @State var targetPosition = CGPoint(x: 100, y: 100)
+    @State var singleTargetPosition = CGPoint(x: 100, y: 100)
+    @State var multipleTargetPositions: [CGPoint] = [CGPoint(x: 100, y: 100)]
 
     var body: some View {
         ZStack {
@@ -20,16 +21,21 @@ struct GameView: View {
                 TargetView(target: Target(hitpoints: gameViewModel.SINGLE_TARGET_HP)) {
                     generateNewTargetPosition()
                 }
-                .position(targetPosition)
+                .position(singleTargetPosition)
             case .multipleTargets: // TODO
-                TargetView(target: Target()) {
-                    generateNewTargetPosition()
+                ForEach(1..<multipleTargetPositions.count, id: \.self) { i in
+                    TargetView(target: Target(hitpoints: 99)) {
+                        gameViewModel.generateNewTargetPosition()
+                        multipleTargetPositions[i] = gameViewModel.targetPosition
+                    }
+                    .position(multipleTargetPositions[i])
                 }
+                
             case .headshotCity:
                 TargetView(target: Target(hitpoints: gameViewModel.HEADSHOT_CITY_HP)) {
                     generateNewTargetPosition()
                 }
-                .position(targetPosition)
+                .position(singleTargetPosition)
             case .ramboHeadshot: // TODO
                 TargetView(target: Target()) {
                     generateNewTargetPosition()
@@ -49,8 +55,16 @@ struct GameView: View {
     }
     
     private func generateNewTargetPosition() {
-        gameViewModel.generateNewTargetPosition()
-        targetPosition = gameViewModel.targetPosition
+        switch gameViewModel.gameMode {
+        case .singleFluctuatingTarget, .headshotCity:
+            gameViewModel.generateNewTargetPosition()
+            singleTargetPosition = gameViewModel.targetPosition
+        case .multipleTargets, .ramboHeadshot:
+            gameViewModel.generateNewTargetPositions()
+            multipleTargetPositions = gameViewModel.targetPositions
+            print(multipleTargetPositions)
+        }
+        
     }
 }
 
