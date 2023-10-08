@@ -1,18 +1,18 @@
 //
-//  Sounds.swift
+//  SoundViewModel.swift
 //  Experimental1
 //
-//  Created by Dave Gumba on 2023-10-05.
+//  Created by Dave Gumba on 2023-10-08.
 //
 
 import Foundation
 import AVFoundation
 
-class Sounds {
+class SoundViewModel: ObservableObject {
     
-    static var audioPlayer: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     
-    static func playSounds(soundfile: String) {
+    func playSound(soundfile: String) {
         
         if let path = Bundle.main.path(forResource: soundfile, ofType: nil) {
             
@@ -27,7 +27,8 @@ class Sounds {
         }
     }
     
-    static func stopSounds() {
-        audioPlayer?.pause()
+    func stopSound() {
+        audioPlayer?.stop()
     }
+    
 }

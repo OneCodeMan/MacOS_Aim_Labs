@@ -58,7 +58,6 @@ struct GameView: View {
         case .multipleTargets, .ramboHeadshot:
             gameViewModel.generateNewTargetPositions()
             multipleTargetPositions = gameViewModel.targetPositions
-            print(multipleTargetPositions)
         }
         
     }

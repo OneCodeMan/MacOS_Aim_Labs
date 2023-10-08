@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CGExtender
 
 class GameViewModel: ObservableObject {
     let background = Color.blue
@@ -57,7 +58,6 @@ class GameViewModel: ObservableObject {
     
     // For single targets
     func generateNewTargetPosition() {
-        
         switch gameMode {
         case .singleFluctuatingTarget, .multipleTargets:
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
@@ -72,7 +72,7 @@ class GameViewModel: ObservableObject {
     // For multiple targets, initially
     func generateNewTargetPositions() {
         switch gameMode {
-        case .multipleTargets: // FIXME
+        case .multipleTargets: // FIXME: Collision detection
             var newTargetPositions = [CGPoint]()
             for _ in 1...MAX_TARGETS_MULTIPLE {
                 let randomX = CGFloat.random(in: MIN_X..<MAX_X)
@@ -80,6 +80,7 @@ class GameViewModel: ObservableObject {
                 let randomPoint = CGPoint(x: randomX, y: randomY)
                 newTargetPositions.append(randomPoint)
             }
+            newTargetPositions = targetPositionsWithoutCollisions(targetPositions: newTargetPositions)
             self.targetPositions = newTargetPositions
         case .ramboHeadshot:
             var newTargetPositions = [CGPoint]()
@@ -94,6 +95,35 @@ class GameViewModel: ObservableObject {
 
         }
     }
+    
+    private func targetPositionsWithoutCollisions(targetPositions: [CGPoint]) -> [CGPoint] {
+        var newTargetPositions = [CGPoint]()
+        
+        for originalPosition in targetPositions {
+            let currentPosition = originalPosition
+            
+            for otherPosition in targetPositions.filter({ $0 != currentPosition }) {
+                var newPosition = otherPosition
+                while collisionExists(targetPosition1: currentPosition, targetPosition2: newPosition) {
+                    let randomX = CGFloat.random(in: MIN_X..<MAX_X)
+                    let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
+                    newPosition = CGPoint(x: randomX, y: randomY)
+                }
+                
+                newTargetPositions.append(newPosition)
+            }
+        }
+        
+        return targetPositions
+    }
+    
+    private func collisionExists(targetPosition1: CGPoint, targetPosition2: CGPoint) -> Bool {
+        let radius: CGFloat = 20.0 // FIXME: Hard-coded
+        let collisionExists = distance(targetPosition1, targetPosition2) < radius * 2
+        return collisionExists
+    }
+    
+    // MARK: Audio
     
     func playShootingSound() {
         Sounds.playSounds(soundfile: self.gunSound)

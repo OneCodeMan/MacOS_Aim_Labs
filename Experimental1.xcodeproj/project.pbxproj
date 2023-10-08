@@ -41,6 +41,11 @@
 		162ED68F2ACF2650008E0622 /* MenuSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED68E2ACF2650008E0622 /* MenuSelectButton.swift */; };
 		162ED6912ACF2849008E0622 /* MenuActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6902ACF2849008E0622 /* MenuActionButton.swift */; };
 		162ED6932ACF2966008E0622 /* MenuActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6922ACF2966008E0622 /* MenuActionButtonStyle.swift */; };
+		162ED6962AD22FA4008E0622 /* Circle+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED6952AD22FA4008E0622 /* Circle+Circle.swift */; };
+		162ED6992AD23003008E0622 /* CGExtender in Frameworks */ = {isa = PBXBuildFile; productRef = 162ED6982AD23003008E0622 /* CGExtender */; };
+		162ED69B2AD33B1E008E0622 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED69A2AD33B1E008E0622 /* TestView.swift */; };
+		162ED69D2AD341D1008E0622 /* SoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162ED69C2AD341D1008E0622 /* SoundViewModel.swift */; };
+		1631159B2AD3460800717E6C /* TargetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631159A2AD3460800717E6C /* TargetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,10 @@
 		162ED68E2ACF2650008E0622 /* MenuSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectButton.swift; sourceTree = "<group>"; };
 		162ED6902ACF2849008E0622 /* MenuActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButton.swift; sourceTree = "<group>"; };
 		162ED6922ACF2966008E0622 /* MenuActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionButtonStyle.swift; sourceTree = "<group>"; };
+		162ED6952AD22FA4008E0622 /* Circle+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Circle+Circle.swift"; sourceTree = "<group>"; };
+		162ED69A2AD33B1E008E0622 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		162ED69C2AD341D1008E0622 /* SoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewModel.swift; sourceTree = "<group>"; };
+		1631159A2AD3460800717E6C /* TargetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162ED6992AD23003008E0622 /* CGExtender in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +235,7 @@
 				162ED64B2ACE6D80008E0622 /* TargetView.swift */,
 				162ED66A2ACF1522008E0622 /* StartView.swift */,
 				162ED67D2ACF1FF6008E0622 /* MenuView.swift */,
+				162ED69A2AD33B1E008E0622 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				162ED6552ACE72E1008E0622 /* Sounds.swift */,
 				162ED6532ACE726B008E0622 /* Constants.swift */,
 				162ED6622ACF0F85008E0622 /* View+Hidden.swift */,
+				162ED6952AD22FA4008E0622 /* Circle+Circle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -244,6 +256,8 @@
 			children = (
 				162ED6792ACF1C6E008E0622 /* GameSettingsViewModel.swift */,
 				162ED65C2ACE7A83008E0622 /* GameViewModel.swift */,
+				162ED69C2AD341D1008E0622 /* SoundViewModel.swift */,
+				1631159A2AD3460800717E6C /* TargetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +352,9 @@
 			dependencies = (
 			);
 			name = Experimental1;
+			packageProductDependencies = (
+				162ED6982AD23003008E0622 /* CGExtender */,
+			);
 			productName = Experimental1;
 			productReference = 162ED5D12ACDF194008E0622 /* Experimental1.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +427,9 @@
 				Base,
 			);
 			mainGroup = 162ED5C82ACDF194008E0622;
+			packageReferences = (
+				162ED6972AD23003008E0622 /* XCRemoteSwiftPackageReference "CGExtender" */,
+			);
 			productRefGroup = 162ED5D22ACDF194008E0622 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,13 +491,17 @@
 				162ED64F2ACE713F008E0622 /* GameConfig.swift in Sources */,
 				162ED5D72ACDF194008E0622 /* ContentView.swift in Sources */,
 				162ED6562ACE72E1008E0622 /* Sounds.swift in Sources */,
+				162ED6962AD22FA4008E0622 /* Circle+Circle.swift in Sources */,
 				162ED67C2ACF1DCE008E0622 /* MenuSelectButtonStyle.swift in Sources */,
+				162ED69D2AD341D1008E0622 /* SoundViewModel.swift in Sources */,
+				1631159B2AD3460800717E6C /* TargetViewModel.swift in Sources */,
 				162ED5D52ACDF194008E0622 /* Experimental1App.swift in Sources */,
 				162ED67E2ACF1FF6008E0622 /* MenuView.swift in Sources */,
 				162ED66E2ACF159C008E0622 /* GameMode.swift in Sources */,
 				162ED6932ACF2966008E0622 /* MenuActionButtonStyle.swift in Sources */,
 				162ED68F2ACF2650008E0622 /* MenuSelectButton.swift in Sources */,
 				162ED6542ACE726B008E0622 /* Constants.swift in Sources */,
+				162ED69B2AD33B1E008E0622 /* TestView.swift in Sources */,
 				162ED6482ACE6A5C008E0622 /* Target.swift in Sources */,
 				162ED6912ACF2849008E0622 /* MenuActionButton.swift in Sources */,
 				162ED64C2ACE6D80008E0622 /* TargetView.swift in Sources */,
@@ -803,6 +827,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		162ED6972AD23003008E0622 /* XCRemoteSwiftPackageReference "CGExtender" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kieranb662/CGExtender";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		162ED6982AD23003008E0622 /* CGExtender */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 162ED6972AD23003008E0622 /* XCRemoteSwiftPackageReference "CGExtender" */;
+			productName = CGExtender;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 162ED5C92ACDF194008E0622 /* Project object */;
 }

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "cgextender",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kieranb662/CGExtender",
+      "state" : {
+        "revision" : "3417457a041a238f4b0df9d702fd8d85bbdd6810",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 2
+}

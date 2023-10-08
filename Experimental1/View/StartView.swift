@@ -13,20 +13,27 @@ struct StartView: View {
     @State var gameInProgress = false
     @State var musicPlaying = true
     
+    @State var debugMode = false
+    
     var body: some View {
-        Group {
-            if gameInProgress {
-                GameView(gameViewModel: GameViewModel(gameMode: selectedGameMode, selectedGun: selectedGun))
-            } else {
-                MenuView(selectedGameMode: $selectedGameMode, selectedGun: $selectedGun, gameInProgress: $gameInProgress, musicPlaying: $musicPlaying)
-            }
-            
-        } // Group
-        .onAppear(perform: {
-            if musicPlaying {
-                Sounds.playSounds(soundfile: Constants.ThemeMusic.rings)
-            }
-        })
+        if debugMode {
+            TestView()
+        } else {
+            Group {
+                if gameInProgress {
+                    GameView(gameViewModel: GameViewModel(gameMode: selectedGameMode, selectedGun: selectedGun))
+                } else {
+                    MenuView(selectedGameMode: $selectedGameMode, selectedGun: $selectedGun, gameInProgress: $gameInProgress, musicPlaying: $musicPlaying)
+                }
+                
+            } // Group
+            .onAppear(perform: {
+                if musicPlaying {
+                    Sounds.playSounds(soundfile: Constants.ThemeMusic.rings)
+                }
+            })
+        }
+        
         
     }
 }
