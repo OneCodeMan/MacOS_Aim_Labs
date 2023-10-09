@@ -36,7 +36,6 @@ class GameViewModel: ObservableObject {
     let MAX_TARGETS_HEADSHOT_RAMBO = 4
     
     // Other stuff
-    
     var gameMode: GameMode
     var selectedGun: SelectedGun
     var gunSound: String = Constants.ShootingSound.deagleSoundString
@@ -62,13 +61,15 @@ class GameViewModel: ObservableObject {
     func generateNewTargetPosition() {
         switch gameMode {
         case .singleFluctuatingTarget, .multipleTargets:
-            let randomX = CGFloat.random(in: MIN_X..<MAX_X)
-            let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
-            self.targetPosition = CGPoint(x: randomX, y: randomY)
+            self.targetPosition = self.randomPosition()
         case .headshotCity, .ramboHeadshot:
             let randomX = CGFloat.random(in: MIN_X..<MAX_X)
             self.targetPosition = CGPoint(x: randomX, y: FIXED_Y)
         }
+    }
+    
+    func generateNewTargetPosition(for index: Int) {
+        self.targetPositions[index] = self.randomPosition()
     }
     
     // For multiple targets, initially
@@ -77,12 +78,9 @@ class GameViewModel: ObservableObject {
         case .multipleTargets: // FIXME: Collision detection
             var newTargetPositions = [CGPoint]()
             for _ in 1...MAX_TARGETS_MULTIPLE {
-                let randomX = CGFloat.random(in: MIN_X..<MAX_X)
-                let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
-                let randomPoint = CGPoint(x: randomX, y: randomY)
+                let randomPoint = self.randomPosition(currentPositions: newTargetPositions)
                 newTargetPositions.append(randomPoint)
             }
-            newTargetPositions = targetPositionsWithoutCollisions(targetPositions: newTargetPositions)
             self.targetPositions = newTargetPositions
         case .ramboHeadshot:
             var newTargetPositions = [CGPoint]()
@@ -98,40 +96,16 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    private func targetPositionsWithoutCollisions(targetPositions: [CGPoint]) -> [CGPoint] {
-        var newTargetPositions = [CGPoint]()
-        
-        for originalPosition in targetPositions {
-            let currentPosition = originalPosition
-            
-            for otherPosition in targetPositions.filter({ $0 != currentPosition }) {
-                var newPosition = otherPosition
-                while collisionExists(targetPosition1: currentPosition, targetPosition2: newPosition) {
-                    let randomX = CGFloat.random(in: MIN_X..<MAX_X)
-                    let randomY = CGFloat.random(in: MIN_Y..<MAX_Y)
-                    newPosition = CGPoint(x: randomX, y: randomY)
-                }
-                
-                newTargetPositions.append(newPosition)
-            }
-        }
-        
-        return targetPositions
-    }
-    
-    private func collisionExists(targetPosition1: CGPoint, targetPosition2: CGPoint) -> Bool {
-        let radius: CGFloat = 20.0 // FIXME: Hard-coded
-        let collisionExists = distance(targetPosition1, targetPosition2) < radius * 2
-        return collisionExists
-    }
-    
     // Generate a random non-overlapping position for a circle
     // Size is: (1470.0, 920.0)
-    func randomPosition(in size: CGSize = CGSize(width: 1470.0, height: 920.0)) -> CGPoint {
+    func randomPosition(in size: CGSize = CGSize(width: 1470.0, height: 920.0), currentPositions: [CGPoint]? = nil) -> CGPoint {
         var position: CGPoint
         var isOverlapping: Bool
         let circleSize: CGFloat = 40.0
         let padding: CGFloat = 30.0
+        
+        let currentArray = currentPositions == nil ? self.targetPositions : currentPositions
+        guard let positions = currentArray else { return CGPoint(x: 0, y: 0) }
         
         repeat {
             position = CGPoint(
@@ -141,8 +115,8 @@ class GameViewModel: ObservableObject {
             
             // Check for overlaps with existing circles
             isOverlapping = false
-            for existingCircle in 0..<self.targetPositions.count {
-                let existingPosition = self.targetPositions[existingCircle]
+            for existingCircle in 0..<positions.count {
+                let existingPosition = positions[existingCircle]
                 let distance = sqrt(pow(position.x - existingPosition.x, 2) + pow(position.y - existingPosition.y, 2))
                 if distance < (circleSize + padding) {
                     isOverlapping = true

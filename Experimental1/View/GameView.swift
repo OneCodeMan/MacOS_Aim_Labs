@@ -27,8 +27,8 @@ struct GameView: View {
                    ZStack {
                        ForEach(0..<multipleTargetPositions.count, id: \.self) { i in
                            TargetView(target: Target(hitpoints: 99)) {
-                               let newPosition = gameViewModel.randomPosition(in: geometry.size)
-                               multipleTargetPositions[i] = newPosition
+                               gameViewModel.generateNewTargetPosition(for: i)
+                               multipleTargetPositions[i] = gameViewModel.targetPositions[i]
                            }
                            .position(multipleTargetPositions[i])
                        }
