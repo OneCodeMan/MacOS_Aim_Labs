@@ -11,6 +11,8 @@ struct GameView: View {
     @State var gameViewModel: GameViewModel
     @State var singleTargetPosition = CGPoint(x: 100, y: 100)
     @State var multipleTargetPositions: [CGPoint] = [CGPoint(x: 100, y: 100)]
+    
+    @State private var hover: Bool = false
 
     var body: some View {
         ZStack {
@@ -24,16 +26,16 @@ struct GameView: View {
                 .position(singleTargetPosition)
             case .multipleTargets:
                 GeometryReader { geometry in
-                   ZStack {
-                       ForEach(0..<multipleTargetPositions.count, id: \.self) { i in
-                           TargetView(target: Target(hitpoints: 99)) {
-                               gameViewModel.generateNewTargetPosition(for: i)
-                               multipleTargetPositions[i] = gameViewModel.targetPositions[i]
-                           }
-                           .position(multipleTargetPositions[i])
-                       }
-                   }
-               }
+                    ZStack {
+                        ForEach(0..<multipleTargetPositions.count, id: \.self) { i in
+                            TargetView(target: Target(hitpoints: 99)) {
+                                gameViewModel.generateNewTargetPosition(for: i)
+                                multipleTargetPositions[i] = gameViewModel.targetPositions[i]
+                            }
+                            .position(multipleTargetPositions[i])
+                        }
+                    }
+                }
             case .ramboHeadshot:
                 ForEach(0..<multipleTargetPositions.count, id: \.self) { i in
                     TargetView(target: Target(hitpoints: 99)) {
@@ -48,10 +50,10 @@ struct GameView: View {
                 }
                 .position(singleTargetPosition)
             }
-
         } // ZStack
         .onTapGesture {
             gameViewModel.playShootingSound()
+            NSCursor.crosshair.push()
         }
         .onAppear {
             generateNewTargetPosition()
@@ -59,6 +61,16 @@ struct GameView: View {
             print("Game Mode: \(gameViewModel.gameMode.description)")
             print("Selected Gun: \(gameViewModel.selectedGun.description)")
         }
+        .onHover(perform: { hovering in
+            self.hover = hovering
+            DispatchQueue.main.async {
+                if (self.hover) {
+                    NSCursor.crosshair.push()
+                } else {
+                    NSCursor.pop()
+                }
+            }
+        })
     }
     
     private func generateNewTargetPosition() {

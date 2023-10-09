@@ -21,7 +21,8 @@ struct TargetView: View {
             .onTapGesture {
                 
                 Sounds.playSounds(soundfile: Constants.TargetDestroySounds.death2SoundString)
-        
+                NSCursor.crosshair.push()
+                
                 if targetHitpoints > 1 {
                     targetHitpoints -= 1
                     handlePosition()
@@ -33,6 +34,9 @@ struct TargetView: View {
             .hidden(targetDestroyed)
             .onAppear(perform: {
                 self.targetHitpoints = target.hitpoints
+            })
+            .onHover(perform: { hovering in
+                NSCursor.crosshair.push()
             })
     }
 }
