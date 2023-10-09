@@ -56,6 +56,8 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    // MARK: Positioning
+    
     // For single targets
     func generateNewTargetPosition() {
         switch gameMode {
@@ -121,6 +123,35 @@ class GameViewModel: ObservableObject {
         let radius: CGFloat = 20.0 // FIXME: Hard-coded
         let collisionExists = distance(targetPosition1, targetPosition2) < radius * 2
         return collisionExists
+    }
+    
+    // Generate a random non-overlapping position for a circle
+    // Size is: (1470.0, 920.0)
+    func randomPosition(in size: CGSize = CGSize(width: 1470.0, height: 920.0)) -> CGPoint {
+        var position: CGPoint
+        var isOverlapping: Bool
+        let circleSize: CGFloat = 40.0
+        let padding: CGFloat = 30.0
+        
+        repeat {
+            position = CGPoint(
+                x: CGFloat.random(in: self.MIN_X...self.MAX_X),
+                y: CGFloat.random(in: self.MIN_Y...self.MAX_Y)
+            )
+            
+            // Check for overlaps with existing circles
+            isOverlapping = false
+            for existingCircle in 0..<self.targetPositions.count {
+                let existingPosition = self.targetPositions[existingCircle]
+                let distance = sqrt(pow(position.x - existingPosition.x, 2) + pow(position.y - existingPosition.y, 2))
+                if distance < (circleSize + padding) {
+                    isOverlapping = true
+                    break
+                }
+            }
+        } while isOverlapping
+        
+        return position
     }
     
     // MARK: Audio

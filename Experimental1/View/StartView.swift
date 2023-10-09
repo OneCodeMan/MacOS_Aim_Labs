@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
-    @State var selectedGameMode: GameMode = .headshotCity
+    @State var selectedGameMode: GameMode = .ramboHeadshot
     @State var selectedGun: SelectedGun = .teamGlock
     @State var gameInProgress = false
     @State var musicPlaying = true
